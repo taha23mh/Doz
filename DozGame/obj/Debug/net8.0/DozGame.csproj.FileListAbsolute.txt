@@ -1,0 +1,4 @@
+C:\Users\BAHARAN\RiderProjects\DozGame\DozGame\obj\Debug\net8.0\DozGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BAHARAN\RiderProjects\DozGame\DozGame\obj\Debug\net8.0\DozGame.AssemblyInfoInputs.cache
+C:\Users\BAHARAN\RiderProjects\DozGame\DozGame\obj\Debug\net8.0\DozGame.AssemblyInfo.cs
+C:\Users\BAHARAN\RiderProjects\DozGame\DozGame\obj\Debug\net8.0\DozGame.csproj.CoreCompileInputs.cache
