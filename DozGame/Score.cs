@@ -1,5 +1,8 @@
 namespace DozGame;
 
+/// <summary>
+/// docs
+/// </summary>
 public class Score
 {
     public int Win { get; set; }
