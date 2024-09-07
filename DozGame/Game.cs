@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace DozGame;
 
 public class Game
@@ -20,4 +22,33 @@ public class Game
             new(2, "name2", false, 'x'),
         };
     }
+    public void setSquare(DozGameModel dozGameModel)
+    {
+       Board.SetSquares(dozGameModel);
+    }
+   public void SwitchPlayer()
+    {
+        var nextPlayer = _players.First(Player => !Player.IsCurrentlyPlaying);
+        var CurrentPlayer =_players.First(Player =>Player.IsCurrentlyPlaying);
+        CurrentPlayer.SetCurrentlyPlaying(false);
+        nextPlayer.SetCurrentlyPlaying(true);
+    }
+    public bool IsGameOver()
+    {
+        return false;
+    }
+    public bool IsDraw()
+    {
+        return false;
+    }
+    public Player GetWinner()
+    {
+        return null;
+    }
+    public Player GetLoser()
+    {
+        return null;
+    }
+    public Board Board => _board;
+    public List<Player> Players => _players;
 }
