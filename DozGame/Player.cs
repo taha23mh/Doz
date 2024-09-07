@@ -22,7 +22,7 @@ public class Player(int id, string name, bool isCurrentlyPlaying, char symbol)
     }
     public void AddLose()
     {
-        _score.IncrementLoses();
+        _score.IncrementLosses();
     }
     public void ResetScore()
     {

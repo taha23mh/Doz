@@ -22,7 +22,7 @@ public class Game
             new(2, "name2", false, 'x'),
         };
     }
-    public void setSquare(DozGameModel dozGameModel)
+    public void SetSquare(DozGameModel dozGameModel)
     {
        Board.SetSquares(dozGameModel);
     }
@@ -35,19 +35,32 @@ public class Game
     }
     public bool IsGameOver()
     {
-        return false;
+        return GetWinner() != null || IsDraw(); 
     }
     public bool IsDraw()
     {
-        return false;
+        var currentPlayer = _players.First(Player => Player.IsCurrentlyPlaying);
+        var IsWinningMove = _board.IsWinningMove(currentPlayer.Symbol);
+        return !_board.IsWinningMove(currentPlayer.Symbol) && _board.IsFull();
     }
     public Player GetWinner()
     {
-        return null;
+        var currentPlayer = _players.First(Player => Player.IsCurrentlyPlaying);
+        var IsWinningMove = _board.IsWinningMove(currentPlayer.Symbol);
+        return currentPlayer;
     }
     public Player GetLoser()
+
     {
+        var winner = GetWinner();
+        if (winner != null)
+        { 
+            return _players.First(Player=>Player.Id != winner.Id);
+        }
+        else
+        {
         return null;
+        }
     }
     public Board Board => _board;
     public List<Player> Players => _players;
