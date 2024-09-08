@@ -40,7 +40,7 @@ public class Board
                 return false;
             }
         }
-            return true;    
+        return true;
     }
 
     private bool IsWinningColumn(char symbol)
@@ -89,9 +89,9 @@ public class Board
 
     public bool IsFull()
     {
-        for (int i = 0; i < Rows; i++)
+        for (int j = 0; j < Columns; j++)
         {
-            for (int j = 0; i < Columns; j++)
+            for (int i = 0; i < Rows; i++)
             {
                 if (Squares[i, j].IsTaken())
                 {
