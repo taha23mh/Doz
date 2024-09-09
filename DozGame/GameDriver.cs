@@ -3,11 +3,11 @@ namespace DozGame;
 public class GameDriver
 {
     public Game Game { get; set; }
-    public List<Player> players => [new(1, "name1", true, 'o'),
+    public static List<Player> Players => [new(1, "name1", true, 'o'),
                                     new(2, "name2", false, 'x'),];
     public GameDriver()
     {
-        Game = new Game(new Board(), players);
+        Game = new Game(new Board(), Players);
     }
     public void SetSquare(DozGameModel dozGameModel)
     {
@@ -21,15 +21,15 @@ public class GameDriver
     {
         if (!Game.IsDraw())
         {
-        
-        Game.GetLoser()?.AddLose();
+
+            Game.GetLoser()?.AddLose();
             Game.GetWinner()?.AddWin();
         }
         else
         {
             Game.Players.ForEach(players => players.AddDraw());
         }
-        Game = new Game(new Board(), players);
+        Game = new Game(new Board(), Players);
     }
     public Player GetWinner()
     {

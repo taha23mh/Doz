@@ -10,7 +10,7 @@ public class Player(int id, string name, bool isCurrentlyPlaying, char symbol)
 
     public void SetCurrentlyPlaying(bool isCurrentlyPlaying)
     {
-        IsCurrentlyPlaying = isCurrentlyPlaying; 
+        IsCurrentlyPlaying = isCurrentlyPlaying;
     }
     public void AddWin()
     {

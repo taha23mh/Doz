@@ -16,6 +16,6 @@ public class Square
 
     public void SetSquare(char symbol)
     {
-        Symbol = symbol; 
+        Symbol = symbol;
     }
 }

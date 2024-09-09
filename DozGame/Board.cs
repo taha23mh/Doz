@@ -93,7 +93,7 @@ public class Board
         {
             for (int i = 0; i < Rows; i++)
             {
-                if (Squares[i, j].IsTaken())
+                if (!Squares[i, j].IsTaken())
                 {
                     return false;
                 }

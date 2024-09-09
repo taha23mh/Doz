@@ -20,7 +20,7 @@ public class Score
     }
     public void IncrementDraws()
     {
-        Draws++;    
+        Draws++;
     }
     public void Reset()
     {

@@ -26,6 +26,7 @@ namespace DozGame
                 {
                     row = random.Next(0, gameDriver.Rows);
                     column = random.Next(0, gameDriver.Columns);
+
                 } while (gameDriver.IsSquareTaken(row, column));
 
 
@@ -47,7 +48,7 @@ namespace DozGame
 
             if (gameDriver.Game.IsDraw())
             {
-                Console.WriteLine("It's a draw!");
+                Console.WriteLine("It's Draw");
             }
             else
             {
@@ -62,7 +63,8 @@ namespace DozGame
             {
                 for (int j = 0; j < board.Columns; j++)
                 {
-                    char symbol = board.Squares[i, j].IsTaken() ? board.Squares[i, j].Symbol : '-';
+                    char symbol = board.Squares[i, j].IsTaken() ? board.Squares[i, j].Symbol : '_';
+
                     Console.Write(symbol + " ");
                 }
                 Console.WriteLine();

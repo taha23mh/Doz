@@ -24,18 +24,18 @@ public class Game
     }
     public void SetSquare(DozGameModel dozGameModel)
     {
-       Board.SetSquares(dozGameModel);
+        Board.SetSquares(dozGameModel);
     }
-   public void SwitchPlayer()
+    public void SwitchPlayer()
     {
         var nextPlayer = _players.First(Player => !Player.IsCurrentlyPlaying);
-        var CurrentPlayer =_players.First(Player =>Player.IsCurrentlyPlaying);
+        var CurrentPlayer = _players.First(Player => Player.IsCurrentlyPlaying);
         CurrentPlayer.SetCurrentlyPlaying(false);
         nextPlayer.SetCurrentlyPlaying(true);
     }
     public bool IsGameOver()
     {
-        return GetWinner() != null || IsDraw(); 
+        return GetWinner() != null || IsDraw();
     }
     public bool IsDraw()
     {
@@ -46,20 +46,19 @@ public class Game
     public Player GetWinner()
     {
         var currentPlayer = _players.First(Player => Player.IsCurrentlyPlaying);
-        var IsWinningMove = _board.IsWinningMove(currentPlayer.Symbol);
-        return currentPlayer;
+        return _board.IsWinningMove(currentPlayer.Symbol) ? currentPlayer : null;
     }
     public Player GetLoser()
 
     {
         var winner = GetWinner();
         if (winner != null)
-        { 
-            return _players.First(Player=>Player.Id != winner.Id);
+        {
+            return _players.First(Player => Player.Id != winner.Id);
         }
         else
         {
-        return null;
+            return null;
         }
     }
     public Board Board => _board;
